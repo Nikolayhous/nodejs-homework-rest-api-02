@@ -1,28 +1,10 @@
-import {
-  listContactsController,
-  getContactByIdController,
-  addContactController,
-  removeContactController,
-  updateContactController,
-  updateStatusContactController,
-} from "./contacts";
-
-import {
-  signupController,
-  loginController,
-  logoutController,
-  getCurrentUserController,
-} from "./auth";
+import { ContactsControllers } from "./contacts";
+import { AuthControllers } from "./auth";
+import { aggregationController, uploadAvatar } from "./users";
 
 export {
-  listContactsController,
-  getContactByIdController,
-  addContactController,
-  removeContactController,
-  updateContactController,
-  updateStatusContactController,
-  signupController,
-  loginController,
-  logoutController,
-  getCurrentUserController,
+  ContactsControllers,
+  AuthControllers,
+  aggregationController,
+  uploadAvatar,
 };
