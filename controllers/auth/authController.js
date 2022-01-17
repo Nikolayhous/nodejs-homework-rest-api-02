@@ -1,22 +1,25 @@
 import { HttpCode } from "../../lib/constants";
-import AuthService from "../../service/auth";
-const authService = new AuthService();
+import { authService } from "../../service/auth";
 
 class AuthControllers {
   async signupController(req, res, next) {
-    const { email } = req.body;
-    const isUserExist = await authService.isUserExist(email);
-    if (isUserExist) {
-      return res.status(HttpCode.CONFLICT).json({
-        status: "success",
-        code: HttpCode.CONFLICT,
-        message: "Email is already exist",
-      });
+    try {
+      const { email } = req.body;
+      const isUserExist = await authService.isUserExist(email);
+      if (isUserExist) {
+        return res.status(HttpCode.CONFLICT).json({
+          status: "success",
+          code: HttpCode.CONFLICT,
+          message: "Email is already exist",
+        });
+      }
+      const data = await authService.create(req.body);
+      res
+        .status(HttpCode.CREATED)
+        .json({ status: "success", code: HttpCode.CREATED, data });
+    } catch (error) {
+      next(error);
     }
-    const data = await authService.create(req.body);
-    res
-      .status(HttpCode.OK)
-      .json({ status: "success", code: HttpCode.OK, data });
   }
 
   async loginController(req, res, next) {
@@ -67,4 +70,4 @@ class AuthControllers {
   }
 }
 
-export default AuthControllers;
+export default new AuthControllers();
