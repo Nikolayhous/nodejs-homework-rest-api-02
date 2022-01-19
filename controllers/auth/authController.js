@@ -3,7 +3,7 @@ import { authService } from "../../service/auth";
 import {
   EmailService,
   SenderSendGrid,
-  SenderNodemailer,
+  // SenderNodemailer,
 } from "../../service/email";
 class AuthControllers {
   async signupController(req, res, next) {

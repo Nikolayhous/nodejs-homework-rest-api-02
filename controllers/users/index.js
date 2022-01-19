@@ -71,7 +71,7 @@ const repeatEmailForVerifyUser = async (req, res, next) => {
     const { email, name, verifyTokenEmail } = user;
     const emailService = new EmailService(
       process.env.NODE_ENV,
-      new SenderNodemailer()
+      new SenderSendGrid()
     );
 
     const isSend = await emailService.sendVerifyEmail(
