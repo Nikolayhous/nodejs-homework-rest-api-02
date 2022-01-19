@@ -4,7 +4,7 @@ import { HttpCode } from "../lib/constants";
 const limiter = (duration, limit) => {
   return rateLimit({
     windowMs: duration, // 15 minutes
-    max: limit, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+    max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
     standardHeaders: true,
     legacyHeaders: false,
     handler: (req, res, next) => {
