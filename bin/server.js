@@ -4,7 +4,7 @@ import db from "../config/db";
 // eslint-disable-next-line no-unused-vars
 import { colors } from "../helpers";
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 db.then(() => {
   app.listen(PORT, async () => {
