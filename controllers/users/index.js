@@ -5,7 +5,11 @@ import {
   LocalFileStorage,
   // CloudFileStorage, //можно сменить хранилище на облачное
 } from "../../service/storageAvatar";
-import { findByVerifyToken, findByEmail } from "../../repository/auth";
+import {
+  findByVerifyToken,
+  findByEmail,
+  updateVerify,
+} from "../../repository/auth";
 import {
   EmailService,
   SenderNodemailer,
@@ -67,7 +71,7 @@ const repeatEmailForVerifyUser = async (req, res, next) => {
     const { email, name, verifyTokenEmail } = user;
     const emailService = new EmailService(
       process.env.NODE_ENV,
-      new SenderSendGrid()
+      new SenderNodemailer()
     );
 
     const isSend = await emailService.sendVerifyEmail(
