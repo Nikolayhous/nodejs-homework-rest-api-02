@@ -22,6 +22,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/contacts", contactsRouter);
