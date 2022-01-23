@@ -1,6 +1,8 @@
 import { mkdir } from "fs/promises";
 import app from "../app";
 import db from "../config/db";
+// eslint-disable-next-line no-unused-vars
+import { colors } from "../helpers";
 
 const PORT = process.env.PORT || 8080;
 

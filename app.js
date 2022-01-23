@@ -5,7 +5,7 @@ import helmet from "helmet";
 import { HttpCode, LIMIT_JSON } from "./lib/constants";
 import authRouter from "./routes/api/auth";
 import contactsRouter from "./routes/api/contacts";
-import usersRouter from "./routes/api/usersAggregate/aggregate";
+import usersRouter from "./routes/api/users";
 
 const app = express();
 

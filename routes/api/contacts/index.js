@@ -1,5 +1,5 @@
 import express from "express";
-import { ContactsControllers } from "../../../controllers";
+import { contactsControllers } from "../../../controllers";
 
 import {
   validateCreate,
@@ -10,8 +10,6 @@ import {
 } from "../../../midllewares/validation/validationContacts";
 
 import guard from "../../../midllewares/guard";
-
-const contactsControllers = new ContactsControllers();
 
 const router = express.Router();
 
