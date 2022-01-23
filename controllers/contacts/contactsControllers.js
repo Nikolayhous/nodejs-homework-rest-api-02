@@ -94,4 +94,4 @@ class ContactsControllers {
   }
 }
 
-export default ContactsControllers;
+export default new ContactsControllers();

@@ -2,7 +2,13 @@ import mongoose from "mongoose";
 
 const { connect, connection } = mongoose;
 
-const uri = process.env.URI_DB;
+let uri = process.env.URI_DB;
+
+if (process.env.NODE_ENV === "test") {
+  uri = process.env.URI_DB_TEST;
+} else {
+  uri = process.env.URI_DB;
+}
 
 const db = connect(uri, {
   useNewUrlParser: true,

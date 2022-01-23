@@ -1,11 +1,10 @@
 import express from "express";
-import { AuthControllers } from "../../../controllers";
+import { authControllers } from "../../../controllers";
 
 import guard from "../../../midllewares/guard";
 import limiter from "../../../midllewares/rateLimit";
 
 const router = express.Router();
-const authControllers = new AuthControllers();
 
 router.post(
   "/signup",

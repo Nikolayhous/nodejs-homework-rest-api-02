@@ -1,3 +1,3 @@
-import ContactsControllers from "./contactsControllers";
+import contactsControllers from "./contactsControllers";
 
-export { ContactsControllers };
+export { contactsControllers };
