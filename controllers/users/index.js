@@ -12,7 +12,7 @@ import {
 } from "../../repository/auth";
 import {
   EmailService,
-  SenderNodemailer,
+  // SenderNodemailer,
   SenderSendGrid,
 } from "../../service/email";
 

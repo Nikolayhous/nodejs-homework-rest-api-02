@@ -2,12 +2,10 @@ FROM node:16
 
 WORKDIR /usr/src/app
 
-COPY packege*.json .
-
-# RUN npm i
+COPY packege*.json ./
 
 COPY . .
 
-EXPOSE 7000
+EXPOSE 8000
 
 CMD ["node", "bin/server.js"]
