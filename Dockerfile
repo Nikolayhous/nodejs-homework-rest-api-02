@@ -4,8 +4,12 @@ WORKDIR /usr/src/app
 
 COPY packege*.json ./
 
+# RUN npm i
+
 COPY . .
 
-EXPOSE 8000
+EXPOSE 5000
 
-CMD ["node", "bin/server.js"]
+CMD ["npm", "start"]
+
+# docker build . -t yanukhous1710/dockertest

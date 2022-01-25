@@ -22,6 +22,11 @@ const usersSchema = new Schema(
       type: String,
       required: [true, "Password is required"],
     },
+    subscription: {
+      type: String,
+      enum: ["starter", "pro", "business"],
+      default: "starter",
+    },
     role: {
       type: String,
       enum: {
@@ -50,7 +55,7 @@ const usersSchema = new Schema(
     },
     verifyTokenEmail: {
       type: String,
-      default: randomUUID,
+      default: randomUUID(),
     },
   },
   {
